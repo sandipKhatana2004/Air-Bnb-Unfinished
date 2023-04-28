@@ -2,7 +2,7 @@ import { Nunito} from "next/font/google"
 import './globals.css'
 import Navbar from "./components/navbar/Navbar"
 import ClientOnly from "./components/ClientOnly"
-import Modal from "./components/Modals/Modal"
+import RegisterModel from "./components/Modals/RegisterModel"
 
 export const metadata = {
   title: 'AirBnB Clone',
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
-          <Modal isOpen title="SDE Sandip" actionLabel="SDE sk" />
+          <RegisterModel />
         <Navbar />
         </ClientOnly>
         {children}
