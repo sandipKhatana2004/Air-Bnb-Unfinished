@@ -10,14 +10,15 @@ interface ModalProps {
     onSubmit: () => void;
     title?: string;
     body?: React.ReactElement;
-    foter?: React.ReactElement;
+    footer?: React.ReactElement;
     actionLabel: string;
     disabled?: boolean;
     secondaryAction?: () => void;
     secondaryActionLabel?: string;
+    
 }
 
-const Modal: React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title,body, foter, actionLabel, disabled, secondaryAction, secondaryActionLabel}) => {
+const Modal: React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title,body, footer, actionLabel, disabled, secondaryAction, secondaryActionLabel}) => {
     const [showModel, setShowModel] = useState(isOpen)
 
     useEffect(() => {
@@ -166,6 +167,7 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title,body, fot
                                     onClick={handleSubmit}
                                     />
                             </div>
+                            {footer}
                         </div>
                     </div>
                 </div>
